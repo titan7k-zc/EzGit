@@ -1,5 +1,6 @@
 import customtkinter as ctk
 import os
+import platform
 from git_utils import GitUtilsMixin
 from file_utils import FileUtilsMixin
 
@@ -11,10 +12,12 @@ class GitHubHelperApp(ctk.CTk, GitUtilsMixin, FileUtilsMixin):
     def __init__(self):
         super().__init__()
 
+        if platform.system() == "Windows":
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            icon_path = os.path.join(script_dir, "zc.ico")
+            self.iconbitmap(icon_path)
+
         # Window setup
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        icon_path = os.path.join(script_dir, "zc.ico")
-        self.iconbitmap(icon_path)
         self.title("ZC EzGit v2.0")
         self.geometry("1100x700")
 
