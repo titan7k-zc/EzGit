@@ -196,9 +196,9 @@ class GitHubHelperApp(ctk.CTk, GitUtilsMixin, FileUtilsMixin):
     def setup_remote_tab(self):
         t = self.tab_remote
         
-        ctk.CTkButton(t, text="Download", command=lambda: self.run_git("git pull"), height=40).pack(fill="x", padx=20, pady=10)
-        ctk.CTkButton(t, text="Upload", command=lambda: self.run_git("git push"), height=40).pack(fill="x", padx=20, pady=10)
-        ctk.CTkButton(t, text="Sync", command=lambda: self.run_git("git fetch"), height=40).pack(fill="x", padx=20, pady=10)
+        ctk.CTkButton(t, text="Download & update your code", command=lambda: self.run_git("git pull"), height=40).pack(fill="x", padx=20, pady=10)
+        ctk.CTkButton(t, text="Upload your code", command=lambda: self.run_git("git push"), height=40).pack(fill="x", padx=20, pady=10)
+        ctk.CTkButton(t, text="Download", command=lambda: self.run_git("git fetch"), height=40).pack(fill="x", padx=20, pady=10)
         
         ctk.CTkLabel(t, text="First Push", font=("Arial", 14, "bold")).pack(pady=(40, 5))
         ctk.CTkButton(t, text="Push -u origin <current_branch>", command=self.git_push_u, fg_color="#7289da").pack(fill="x", padx=20, pady=5)
