@@ -5,7 +5,7 @@ import platform
 # import ctypes  <-- DO NOT import globally on Linux
 
 from gui import GitHubHelperApp
-# test user branch push test
+# test user branch push test2
 
 def run_app():
     app = GitHubHelperApp()
